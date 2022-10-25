@@ -22,4 +22,9 @@ public class PlannerController {
 		return "prioritypage";
 	}
 	
+	@RequestMapping("/")
+	public String redirect() {
+		return "redirect:home";
+	}
+	
 }
