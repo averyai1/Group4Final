@@ -34,14 +34,50 @@
 	  text-align: center;
 	  border : 1px solid #4C4E4F;
 	  
+	  
 	}
 	.nav a:hover
 	{
 	 	 background-color: #C7D5DB;
 	}
         
- 
-
+	.calender-board{
+		display: grid;
+		justify-content: center;
+		min-height: 94vh;
+		grid-template-columns: repeat(7,150px);
+		grid-template-rows: repeat(5,150px);
+		row-gap: 3px;
+		column-gap: 3px;
+	}
+	.date{
+		border: 3px aliceblue solid;
+		padding: 3px;
+		font-family: Arial, Geneva, Helvetica, sans-serif;
+		color: rgb(231, 231, 231);
+	}
+	.month{
+		font-family: Arial, Geneva, Helvetica, sans-serif;
+		color: white;
+		display: grid;
+		justify-content: center;
+		grid-template-columns: repeat(7,150px);
+		grid-template-rows: repeat(1,20px);
+		align-items: center;
+		margin-left: 110px;
+		
+	}
+	#month-header{
+		text-align: center;
+		color: white;
+	}
+	.past-month{
+		border: 3px aliceblue solid;
+		padding: 3px;
+		font-family: Arial, Geneva, Helvetica, sans-serif;
+		color: rgb(231, 231, 231);
+		opacity: 60%;
+	}
 </style>
 
 </head>
@@ -53,7 +89,109 @@
 	  <a href="/calendar">Calendar</a> 
 	  <a href="/prioritypage">Priority</a>
 	</div>
-        
-   
+    <h1 id="month-header"></h1>
+	<div class="month">
+		<div class="days-of-week">Sun</div>
+		<div class="days-of-week">Mon</div>
+		<div class="days-of-week">Tue</div>
+		<div class="days-of-week">Wed</div>
+		<div class="days-of-week">Thu</div>
+		<div class="days-of-week">Fri</div>
+		<div class="days-of-week">Sat</div>
+	</div>
+	<div class="calender-board" id="calender-grid">
+		<div class="date" id="1">1</div>
+		<div class="date">2</div>
+		<div class="date">3</div>
+		<div class="date">4</div>
+		<div class="date">5</div>
+		<div class="date">6</div>
+		<div class="date">7</div>
+		<div class="date">8</div>
+		<div class="date">9</div>
+		<div class="date">10</div>
+		<div class="date">11</div>
+		<div class="date">12</div>
+		<div class="date">13</div>
+		<div class="date">14</div>
+		<div class="date">15</div>
+		<div class="date">16</div>
+		<div class="date">17</div>
+		<div class="date">18</div>
+		<div class="date">19</div>
+		<div class="date">20</div>
+		<div class="date">21</div>
+		<div class="date">22</div>
+		<div class="date">23</div>
+		<div class="date">24</div>
+		<div class="date">25</div>
+		<div class="date">26</div>
+		<div class="date">27</div>
+		<div class="date">28</div>
+		<div class="date" id="29">29</div>
+		<div class="date" id="30">30</div>
+		<div class="date" id="31">31</div>
+		
+	</div>
+   <script type="text/javascript">
+		//gets current month
+		function currentMonth(){
+			const currentMon = new Date().toLocaleDateString('default', {month:'long'});
+			return currentMon
+		}
+
+		function displayMonth(month,year){
+			document.getElementById("month-header").innerHTML = month + " " + year;
+		}
+
+		
+
+		//removes boxes for certain months
+		function days(){
+			const monthWithThirty = ["April","June","September","November"];
+			const current = currentMonth();
+			if(monthWithThirty.includes(current))
+				document.getElementById("31").remove();
+			else if(current === "February"){
+				document.getElementById("31").remove();
+				document.getElementById("30").remove();
+				document.getElementById("29").remove();
+			}
+			
+		}
+		days();
+
+		//moves the calender over depending on the start day
+		function getFirstDayOfMonth(year,month){
+			return new Date(year,month,1);
+		}
+
+		function getDays(year,month){
+			return new Date(year,month,0);
+		}
+
+		const date = new Date();
+		const firstDayCurrentMonth = getFirstDayOfMonth(
+			date.getFullYear(),
+			date.getMonth()
+		);
+		let meow = getDays(
+			date.getFullYear(),
+			date.getMonth()
+		);
+		let previousDays = meow.getDate();
+
+		let startDay = firstDayCurrentMonth.getDay();
+		for(let i = 0; i < startDay; i++){
+			let test = document.createElement("div");
+			test.appendChild(document.createTextNode(previousDays));
+			test.classList.add("past-month")
+			const cal = document.getElementById("calender-grid");
+			cal.insertBefore(test, cal.firstChild);
+			previousDays--
+		}
+		days();
+		displayMonth(currentMonth(),date.getFullYear());
+   </script>
 </body>
 </html>
