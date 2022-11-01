@@ -175,19 +175,19 @@
 			date.getFullYear(),
 			date.getMonth()
 		);
-		let meow = getDays(
+		let totalDays = getDays(
 			date.getFullYear(),
 			date.getMonth()
 		);
-		let previousDays = meow.getDate();
+		let previousDays = totalDays.getDate();
 
 		let startDay = firstDayCurrentMonth.getDay();
 		for(let i = 0; i < startDay; i++){
-			let test = document.createElement("div");
-			test.appendChild(document.createTextNode(previousDays));
-			test.classList.add("past-month")
+			let lastMonthDays = document.createElement("div");
+			lastMonthDays.appendChild(document.createTextNode(previousDays));
+			lastMonthDays.classList.add("past-month")
 			const cal = document.getElementById("calender-grid");
-			cal.insertBefore(test, cal.firstChild);
+			cal.insertBefore(lastMonthDays, cal.firstChild);
 			previousDays--
 		}
 		days();
