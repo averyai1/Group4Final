@@ -179,7 +179,7 @@
             </div>
 	</div>
       <!--PRIORITY WINDOW-->
-        <div id="newpopup3" class="popup">
+        <div id="newpopUp3" class="popup">
             <div class="popup-content">
                 <span id="close3" class="close">&times;</span>
                 <p>Please add your new task below!</p>
@@ -225,7 +225,7 @@
 	//GETTING, OPENING, AND CLOSING WINDOW
 	var popup = document.getElementById("newpopup");
     var popUp2 = document.getElementById("newpopUp2");
-    var popup3 = document.getElementById("newpopup3");
+    var popUp3 = document.getElementById("newpopUp3");
     // CLOSE BUTTON
 	var span = document.getElementsByClassName("close")[0];
 	document.getElementById("schooltask").addEventListener("click", windowup);
@@ -242,7 +242,7 @@
         document.getElementById("extratask").addEventListener("click", windowup3);
 	function windowup3() 
 	{
-  		popup3.style.display = "block";
+  		popUp3.style.display = "block";
 	}
 
 	function addToList() 
@@ -311,7 +311,7 @@
 	}
         close3.onclick = function() 
 	{
-  	popup3.style.display = "none";        
+  	popUp3.style.display = "none";        
 	}
 </script>
 
