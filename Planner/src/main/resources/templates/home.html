@@ -246,23 +246,23 @@
 
 	function addToList() 
 	{
-		//CREATES LIST, LABEL, AND CHECBOX
-		//SCHOOL LIST
-	  	var li = document.createElement('li');
-	  	var label = document.createElement('label');
-	  	li.appendChild(label);
-	  	var checkBox = document.createElement('input');
-	  	checkBox.type = 'checkbox';
-	  	checkBox.classList.add('test');
-	  	checkBox.value = 'ON';
-	  	label.appendChild(checkbox);
-	  	//INSERTING USER INPUT INTO THE CHECKBOX LABEL
-	  	var userInput = document.getElementById("userInput").value;
-	  	var text = document.createTextNode(userInput);
-	  	label.appendChild(text);
-	  	//APPEND TO LIST             
-        var list = document.getElementById('schoollist');
-        list.insertBefore(li, list.childNodes[0]);
+	  //CREATES LIST, LABEL, AND CHECBOX
+	  //SCHOOL LIST
+	  var li = document.createElement('li');
+	  var label = document.createElement('label');
+	  li.appendChild(label);
+	  var checkBox = document.createElement('input');
+	  checkBox.type = 'checkbox';  	  
+	  checkBox.classList.add('test');
+	  checkBox.value = 'ON';
+	  label.appendChild(checkbox);
+	  //INSERTING USER INPUT INTO THE CHECKBOX LABEL
+	  var userInput = document.getElementById("userInput").value;
+	  var text = document.createTextNode(userInput);
+	  label.appendChild(text);
+	  //APPEND TO LIST             
+      var list = document.getElementById('schoollist');
+      list.insertBefore(li, list.childNodes[0]);
 	}   
         function addToList2() 
 	{
@@ -283,7 +283,7 @@
 	}
         function addToList3() 
 	{
-		//EXTRA LIST
+	  	//EXTRA LIST
 	  	var li = document.createElement('li');
 	  	var label = document.createElement('label');
 	  	li.appendChild(label);
@@ -297,6 +297,7 @@
 	  	label.appendChild(text);             
         var list = document.getElementById('extralist');
         list.insertBefore(li, list.childNodes[0]);
+    	
 	}
         
     //CLOSE FUNCTION FOR X BUTTON ON EACH POPUP    
