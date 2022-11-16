@@ -17,7 +17,7 @@ public class PlannerController {
 		return "calendar";
 	}
 	@RequestMapping("/prioritypage")
-	public String prioritypage() 
+	public String priorityPage() 
 	{
 		return "prioritypage";
 	}
