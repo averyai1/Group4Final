@@ -22,4 +22,12 @@ public class PlannerController {
 		return "prioritypage";
 	}
 	
+	/*
+	 * Redirects the default endpoint ("/") to the home page
+	 */
+	@RequestMapping("/")
+	public String redirectToHome() {
+		return "redirect:home";
+	}
+	
 }
