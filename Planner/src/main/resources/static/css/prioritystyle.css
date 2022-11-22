@@ -1,0 +1,60 @@
+@charset "ISO-8859-1";
+	* {
+ 	 box-sizing: border-box;
+	}
+	body
+	{
+	background-color: #F9FFEE;
+	margin: 0;
+        height: 1000px;
+	}
+	
+	/*DESIGN FOR NAV BAR*/
+		.nav {
+	  width: 100%;
+	  top: 0%;
+	  background-color: #D9E0C9;
+	  overflow: auto;  
+	}
+	.nav a 
+	{
+	  float: left;
+	  padding-top: 10px;
+	  padding-bottom: 10px;
+	  color: black;
+	  text-decoration: none;
+	  font-family: Arial, Geneva, Helvetica, sans-serif;
+	  font-size: 25px;
+	  width:  33.33%;
+	  text-align: center;
+	  border : 1.5px solid #4C4E4F;
+	  border-radius: 0px;
+	  
+	}
+	.nav a:hover
+	{
+	 	 background-color: #C7D5DB;
+	}
+        
+        /*MIDDLE CONTENT BOX*/
+        .centering 
+        {
+            display: flex;
+            justify-content: center;
+            padding-top: 5%;
+        }
+
+        .mainbox
+        {
+            width: 80%;
+            height: 750px;
+            background: #BDD4AA;
+            border-radius: 50px;
+        }
+        
+        #boxheader
+        {
+            text-align: center;
+            font-size: 50px;
+            padding-left: 3%;
+        }
