@@ -1,84 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1"/>
+<link th:href="@{/css/calendarstyle.css}" rel="stylesheet">
+
 <title>Calendar</title>
-<style>
-	* {
- 	 box-sizing: border-box;
-	}
-	body
-	{
-	background-color: #4C4E4F;
-	margin: 0;
-        height: 1000px;
-	}
-	
-	/*DESIGN FOR NAV BAR*/
-	.nav {
-	  width: 100%;
-	  top: 0%;
-	  background-color: #A7AAAE;
-	  overflow: auto;  
-	}
-	.nav a 
-	{
-	  float: left;
-	  padding-top: 10px;
-	  padding-bottom: 10px;
-	  color: white;
-	  text-decoration: none;
-	  font-family: Arial, Geneva, Helvetica, sans-serif;
-	  font-size: 25px;
-	  width:  33.33%;
-	  text-align: center;
-	  border : 1px solid #4C4E4F;
-	  
-	  
-	}
-	.nav a:hover
-	{
-	 	 background-color: #C7D5DB;
-	}
-        
-	.calender-board{
-		display: grid;
-		justify-content: center;
-		min-height: 94vh;
-		grid-template-columns: repeat(7,150px);
-		grid-template-rows: repeat(5,150px);
-		row-gap: 3px;
-		column-gap: 3px;
-	}
-	.date{
-		border: 3px aliceblue solid;
-		padding: 3px;
-		font-family: Arial, Geneva, Helvetica, sans-serif;
-		color: rgb(231, 231, 231);
-	}
-	.month{
-		font-family: Arial, Geneva, Helvetica, sans-serif;
-		color: white;
-		display: grid;
-		justify-content: center;
-		grid-template-columns: repeat(7,150px);
-		grid-template-rows: repeat(1,20px);
-		align-items: center;
-		margin-left: 110px;
-		
-	}
-	#month-header{
-		text-align: center;
-		color: white;
-	}
-	.past-month{
-		border: 3px aliceblue solid;
-		padding: 3px;
-		font-family: Arial, Geneva, Helvetica, sans-serif;
-		color: rgb(231, 231, 231);
-		opacity: 60%;
-	}
-</style>
 
 </head>
 <body>
@@ -139,59 +65,3 @@
 			const currentMon = new Date().toLocaleDateString('default', {month:'long'});
 			return currentMon
 		}
-
-		function displayMonth(month,year){
-			document.getElementById("month-header").innerHTML = month + " " + year;
-		}
-
-		
-
-		//removes boxes for certain months
-		function days(){
-			const monthWithThirty = ["April","June","September","November"];
-			const current = currentMonth();
-			if(monthWithThirty.includes(current))
-				document.getElementById("31").remove();
-			else if(current === "February"){
-				document.getElementById("31").remove();
-				document.getElementById("30").remove();
-				document.getElementById("29").remove();
-			}
-			
-		}
-		days();
-
-		//moves the calender over depending on the start day
-		function getFirstDayOfMonth(year,month){
-			return new Date(year,month,1);
-		}
-
-		function getDays(year,month){
-			return new Date(year,month,0);
-		}
-
-		const date = new Date();
-		const firstDayCurrentMonth = getFirstDayOfMonth(
-			date.getFullYear(),
-			date.getMonth()
-		);
-		let meow = getDays(
-			date.getFullYear(),
-			date.getMonth()
-		);
-		let previousDays = meow.getDate();
-
-		let startDay = firstDayCurrentMonth.getDay();
-		for(let i = 0; i < startDay; i++){
-			let test = document.createElement("div");
-			test.appendChild(document.createTextNode(previousDays));
-			test.classList.add("past-month")
-			const cal = document.getElementById("calender-grid");
-			cal.insertBefore(test, cal.firstChild);
-			previousDays--
-		}
-		days();
-		displayMonth(currentMonth(),date.getFullYear());
-   </script>
-</body>
-</html>
