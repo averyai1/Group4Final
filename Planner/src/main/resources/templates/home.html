@@ -32,7 +32,7 @@
 	</div>
       
         <!--WORK WINDOW-->
-        <div id="newpopup2" class="popup">
+        <div id="newpopUp2" class="popup">
             <div class="popup-content">
                 <span id="close2" class="close">&times;</span>
                 <p>Please add your new task below!</p>
@@ -41,7 +41,7 @@
             </div>
 	</div>
       <!--PRIORITY WINDOW-->
-        <div id="newpopup3" class="popup">
+        <div id="newpopUp3" class="popup">
             <div class="popup-content">
                 <span id="close3" class="close">&times;</span>
                 <p>Please add your new task below!</p>
@@ -83,11 +83,12 @@
 	</div>
 
 <script>
+
 	//GETTING, OPENING, AND CLOSING WINDOW
 	var popup = document.getElementById("newpopup");
-        var popup2 = document.getElementById("newpopup2")
-        var popup3 = document.getElementById("newpopup3")
-        // CLOSE BUTTON
+    var popUp2 = document.getElementById("newpopUp2");
+    var popUp3 = document.getElementById("newpopUp3");
+    // CLOSE BUTTON
 	var span = document.getElementsByClassName("close")[0];
 	document.getElementById("schooltask").addEventListener("click", windowup);
 	function windowup() 
@@ -98,12 +99,12 @@
         document.getElementById("worktask").addEventListener("click", windowup2);
 	function windowup2() 
 	{
-  		popup2.style.display = "block";
+  		popUp2.style.display = "block";
 	}
         document.getElementById("extratask").addEventListener("click", windowup3);
 	function windowup3() 
 	{
-  		popup3.style.display = "block";
+  		popUp3.style.display = "block";
 	}
 
 	function addToList() 
@@ -126,7 +127,8 @@
         var list = document.getElementById('schoollist');
         list.insertBefore(li, list.childNodes[0]);
 	}   
-        function addToList2() 
+   	
+	function addToList2() 
 	{
 		//WORK LIST
 	  	var li = document.createElement('li');
@@ -143,7 +145,8 @@
         var list = document.getElementById('worklist');
         list.insertBefore(li, list.childNodes[0]);
 	}
-        function addToList3() 
+    
+	function addToList3() 
 	{
 		//EXTRA LIST
 	  	var li = document.createElement('li');
@@ -168,11 +171,11 @@
 	}
         close2.onclick = function() 
 	{
-  	popup2.style.display = "none";        
+  	popUp2.style.display = "none";        
 	}
         close3.onclick = function() 
 	{
-  	popup3.style.display = "none";        
+  	popUp3.style.display = "none";        
 	}
 </script>
 
