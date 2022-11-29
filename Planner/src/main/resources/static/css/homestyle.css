@@ -35,14 +35,19 @@
 	{
 	 	 background-color: #C7D5DB;
 	}
+	
+	
+	.column{
+	width:100%;
+	height:100%;
+	}
 
 	/*COLUMN SIZING FOR ORGANIZING BOXES/CONTENT*/
 	/*RECTANGLE SIZING*/
 	.rectangle 
 	{		
-		padding: 15px;
-		width: 100%;
-		height: 1000px;
+		width: 80%;
+		height: 80%;
 		background: #BDD4AA;
 		display: flex;
 		justify-content: center;
@@ -55,6 +60,8 @@
 		text-align: center;
 		font-size: 50px;
 	}
+	
+	
 	/*BUTTON DESIGN AND PLACEMENT*/
 	.button 
 	{
