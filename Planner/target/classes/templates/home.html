@@ -27,24 +27,25 @@
 	<div class="column">
 		<div class="rectangle">
         	<h1 class="boxHeaders">Tasks</h1>
-            <button class="button" id="schooltask">+</button>
+            <a th:href="@{/Planner/task-form}" class="button">+</a>
             <div class="tasklist">
-            	<table>
+            	<table class="task-table">
 		<thead>
 			<tr>
 				<th>Date</th>
-				<th>Desc</th>
 				<th>Name</th>
+				<th>Desc</th>
 				<th>Priority</th>
 			</tr>
 		</thead>
 
-		<tbody>
+		<tbody class="table-body">
 			<tr th:each="thePlanner: ${planner}">
 				<td th:text="${thePlanner.date}" />
+				<td th:text="${thePlanner.name}" />
 				<td th:text="${thePlanner.description}" />
 				<td th:text="${thePlanner.priority}" />
-				<td th:text="${thePlanner.name}" />
+				
 				
 				
 			</tr>
@@ -54,7 +55,7 @@
             	<p id="text"></p>
             </div>
 		</div>
-		</div>
+	</div>
 
 
 </body>

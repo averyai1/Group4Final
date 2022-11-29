@@ -19,7 +19,7 @@ public class PlannerServiceImpl implements PlannerService{
 		
 	}
 	public List<Planner> findAll() {
-		return plannerRepository.findAllByOrderByPriority();
+		return plannerRepository.findAllByOrderByPriorityDesc();
 	}
 	
 	public Planner findById(int theId) {
