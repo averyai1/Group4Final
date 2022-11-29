@@ -27,9 +27,9 @@
 	<div class="column">
 		<div class="rectangle">
         	<h1 class="boxHeaders">Tasks</h1>
-            <button class="button" id="schooltask">+</button>
+            <a th:href="@{/Planner/task-form}" class="button">+</a>
             <div class="tasklist">
-            	<table>
+            	<table class="task-table">
 		<thead>
 			<tr>
 				<th>Date</th>
@@ -39,7 +39,7 @@
 			</tr>
 		</thead>
 
-		<tbody>
+		<tbody class="table-body">
 			<tr th:each="thePlanner: ${planner}">
 				<td th:text="${thePlanner.date}" />
 				<td th:text="${thePlanner.description}" />
