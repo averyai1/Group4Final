@@ -13,7 +13,16 @@
 
 <!---->
 
-<table>
+	<!--NAV BAR ELEMENTS-->
+	<div class="nav"> 
+	  <a href="/Planner/home">Home</a> 
+	  <a href="/Planner/calendar">Calendar</a> 
+	  <a href="/Planner/prioritypage">Priority</a>
+	</div>
+		
+		
+		
+		<table>
 		<thead>
 			<tr>
 				<th>Date</th>
@@ -35,169 +44,18 @@
 		</tbody>
 
 	</table>
-
-	<!--NAV BAR ELEMENTS-->
-	<div class="nav"> 
-	  <a href="/Planner/home">Home</a> 
-	  <a href="/Planner/calendar">Calendar</a> 
-	  <a href="/Planner/prioritypage">Priority</a>
-	</div>
-		
-	<!--WINDOW FOR USER INPUT INTO TASK LISTS-->
-	<!--SCHOOL WINDOW-->
-	<div id="newpopup" class="popup">
-            <div class="popup-content">
-                <span id="close1" class="close">&times;</span>
-                <p>Please add your new task below!</p>
-                <input class="inputbox" type="text" id="userInput" placeholder="Add new task...">
-                <span onclick="addToList()"  id="addBtn" class="addbtn">Add</span>
-            </div>
-	</div>
-      
-        <!--WORK WINDOW-->
-        <div id="newpopup2" class="popup">
-            <div class="popup-content">
-                <span id="close2" class="close">&times;</span>
-                <p>Please add your new task below!</p>
-                <input class="inputbox" type="text" id="userInput2" placeholder="Add new task...">
-                <span onclick="addToList2()"  id="addBtn2" class="addbtn">Add</span>
-            </div>
-	</div>
-      <!--PRIORITY WINDOW-->
-        <div id="newpopup3" class="popup">
-            <div class="popup-content">
-                <span id="close3" class="close">&times;</span>
-                <p>Please add your new task below!</p>
-                <input class="inputbox" type="text" id="userInput3" placeholder="Add new task...">
-                <span onclick="addToList3()"  id="addBtn3" class="addbtn">Add</span>
-            </div>
-	</div>        
-		
 	<!--RECTANGLES HOLDING BUTTONS AND LISTS OF TASKS-->
-	<div class="column">
 		<div class="rectangle">
-        	<h1 class="boxHeaders">School</h1>
+        	<h1 class="boxHeaders">Tasks</h1>
             <button class="button" onclick="usertask()" id="schooltask">+</button>
             <div class="tasklist">
-            	<ol style="list-style-type:none" id="schoollist" class="listsizing"></ol>
+            	<ol style="list-style-type:none" id="schoollist" class="listsizing">
+            	
+            	</ol>
             	<p id="text"></p>
             </div>
 		</div>
-	</div>
 
-	<div class="column">
-		<div class="rectangle">
-            <h1 class="boxHeaders">Work</h1>
-            <button class="button" onclick="usertask()" id="worktask">+</button>
-            <div class="tasklist">
-            	<ol style="list-style-type:none" id="worklist" class="listsizing"></ol>
-			</div>
-		</div>
-	</div>
-		
-	<div class="column">
-		<div class="rectangle">
-        	<h1 class="boxHeaders">Extra</h1>
-        	<button class="button" onclick="usertask()" id="extratask">+</button>
-        	<div class="tasklist">
-        		<ol style="list-style-type:none" id="extralist" class="listsizing"></ol>
-        	</div>	
-		</div>
-	</div>
-
-<script>
-	//GETTING, OPENING, AND CLOSING WINDOW
-	var popup = document.getElementById("newpopup");
-        var popup2 = document.getElementById("newpopup2")
-        var popup3 = document.getElementById("newpopup3")
-        // CLOSE BUTTON
-	var span = document.getElementsByClassName("close")[0];
-	document.getElementById("schooltask").addEventListener("click", windowup);
-	function windowup() 
-	{
-  		popup.style.display = "block";
-	}
-        
-        document.getElementById("worktask").addEventListener("click", windowup2);
-	function windowup2() 
-	{
-  		popup2.style.display = "block";
-	}
-        document.getElementById("extratask").addEventListener("click", windowup3);
-	function windowup3() 
-	{
-  		popup3.style.display = "block";
-	}
-
-	function addToList() 
-	{
-		//CREATES LIST, LABEL, AND CHECBOX
-		//SCHOOL LIST
-	  	var li = document.createElement('li');
-	  	var label = document.createElement('label');
-	  	li.appendChild(label);
-	  	var checkbox = document.createElement('input');
-	  	checkbox.type = 'checkbox';
-	  	checkbox.classList.add('test');
-	  	checkbox.value = 'ON';
-	  	label.appendChild(checkbox);
-	  	//INSERTING USER INPUT INTO THE CHECKBOX LABEL
-	  	var userInput = document.getElementById("userInput").value;
-	  	var text = document.createTextNode(userInput);
-	  	label.appendChild(text);
-	  	//APPEND TO LIST             
-        var list = document.getElementById('schoollist');
-        list.insertBefore(li, list.childNodes[0]);
-	}   
-        function addToList2() 
-	{
-		//WORK LIST
-	  	var li = document.createElement('li');
-	  	var label = document.createElement('label');
-	  	li.appendChild(label);
-	  	var checkbox = document.createElement('input');
-	  	checkbox.type = 'checkbox';
-	  	checkbox.classList.add('test');
-	  	checkbox.value = 'ON';
-	  	label.appendChild(checkbox);
-	  	var userInput2 = document.getElementById("userInput2").value;
-	  	var text = document.createTextNode(userInput2);
-	  	label.appendChild(text);              
-        var list = document.getElementById('worklist');
-        list.insertBefore(li, list.childNodes[0]);
-	}
-        function addToList3() 
-	{
-		//EXTRA LIST
-	  	var li = document.createElement('li');
-	  	var label = document.createElement('label');
-	  	li.appendChild(label);
-	  	var checkbox = document.createElement('input');
-	  	checkbox.type = 'checkbox';
-	  	checkbox.classList.add('test');
-	  	checkbox.value = 'ON';
-	  	label.appendChild(checkbox);
-	  	var userInput3 = document.getElementById("userInput3").value;
-	  	var text = document.createTextNode(userInput3);
-	  	label.appendChild(text);             
-        var list = document.getElementById('extralist');
-        list.insertBefore(li, list.childNodes[0]);
-	}
-        
-    //CLOSE FUNCTION FOR X BUTTON ON EACH POPUP    
-	close1.onclick = function() 
-	{
-  	popup.style.display = "none";        
-	}
-        close2.onclick = function() 
-	{
-  	popup2.style.display = "none";        
-	}
-        close3.onclick = function() 
-	{
-  	popup3.style.display = "none";        
-	}
-</script>
 
 </body>
 </html>
