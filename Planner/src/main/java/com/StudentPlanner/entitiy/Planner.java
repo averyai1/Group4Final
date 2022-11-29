@@ -1,5 +1,7 @@
 package com.StudentPlanner.entitiy;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +26,7 @@ public class Planner {
 	private String description;
 	
 	@Column(name="date")
-	private int date; 
+	private Date date; 
 	
 	@Column(name="priority")
 	private String priority;
@@ -34,7 +36,7 @@ public class Planner {
 		
 	}
 	
-	public Planner(int id, String name, String description, int date, String priority) {
+	public Planner(int id, String name, String description, Date date, String priority) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -68,11 +70,11 @@ public class Planner {
 		this.description = description;
 	}
 	
-	public int getDate() {
+	public Date getDate() {
 		return date;
 	}
 	
-	public void setDate(int date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	
