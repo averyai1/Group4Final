@@ -8,6 +8,6 @@ import com.StudentPlanner.entitiy.Planner;
 
 public interface PlannerRepository extends JpaRepository<Planner, Integer> {
 	
-	public List<Planner>findAllByOrderByPriority();
+	public List<Planner>findAllByOrderByPriorityDesc();
 
 }
