@@ -45,8 +45,13 @@ class="form-control mb-4 col-4" placeholder="Description">
 <input type="date" th:field="*{date}"
 class="form-control mb-4 col-4" placeholder="Date">
 
-<input type="text" th:field="*{priority}"
-class="form-control mb-4 col-4" placeholder="Priority">
+<!-- <input type="text" th:field="*{priority}"
+class="form-control mb-4 col-4" placeholder="Priority"> -->
+<select th:field="*{priority}">
+	<option value="High">High</option>
+	<option value="Medium">Medium</option>
+	<option value="Low">Low</option>
+</select>
 
 <button type="submit" class="btn btn-danger col-2">Add Task</button>
 
