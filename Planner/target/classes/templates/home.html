@@ -13,6 +13,29 @@
 
 <!---->
 
+<table>
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Desc</th>
+				<th>Name</th>
+				<th>Priority</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="thePlanner: ${planner}">
+				<td th:text="${thePlanner.date}" />
+				<td th:text="${thePlanner.description}" />
+				<td th:text="${thePlanner.priority}" />
+				<td th:text="${thePlanner.name}" />
+				
+				
+			</tr>
+		</tbody>
+
+	</table>
+
 	<!--NAV BAR ELEMENTS-->
 	<div class="nav"> 
 	  <a href="/Planner/home">Home</a> 
