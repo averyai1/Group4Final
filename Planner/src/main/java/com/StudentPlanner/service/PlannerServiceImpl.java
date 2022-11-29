@@ -4,11 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.StudentPlanner.dao.PlannerRepository;
 import com.StudentPlanner.entitiy.Planner;
-
-public class PlannerServiceImpl {
+@Service
+public class PlannerServiceImpl implements PlannerService{
 
 	private PlannerRepository plannerRepository;
 	
