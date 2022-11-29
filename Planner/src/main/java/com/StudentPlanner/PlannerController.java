@@ -18,17 +18,17 @@ public class PlannerController {
 		plannerService = thePlannerService;
 	}
 
-	@RequestMapping("/home")
+	@GetMapping("/home")
 	public String home() 
 	{
 		return "home";
 	}
-	@RequestMapping("/calendar")
+	@GetMapping("/calendar")
 	public String calendar() 
 	{
 		return "calendar";
 	}
-	@RequestMapping("/prioritypage")
+	@GetMapping("/prioritypage")
 	public String prioritypage() 
 	{
 		return "prioritypage";
